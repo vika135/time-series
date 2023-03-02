@@ -1,5 +1,5 @@
 {
-  "name": "rent-app",
+  "name": "time-series",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "./src",
   "projectType": "application",
@@ -9,7 +9,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/rent-app"
+        "outputPath": "dist/time-series"
       },
       "configurations": {
         "development": {
@@ -24,15 +24,15 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "rent-app:build"
+        "buildTarget": "time-series:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "rent-app:build:development",
+          "buildTarget": "time-series:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "rent-app:build:production",
+          "buildTarget": "time-series:build:production",
           "hmr": false
         }
       }
@@ -41,23 +41,23 @@
       "executor": "@nrwl/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "rent-app:build"
+        "buildTarget": "time-series:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "rent-app:build:development"
+          "buildTarget": "time-series:build:development"
         },
         "production": {
-          "buildTarget": "rent-app:build:production"
+          "buildTarget": "time-series:build:production"
         }
       }
     },
     "test": {
       "executor": "@nrwl/vite:test",
-      "outputs": ["coverage/rent-app"],
+      "outputs": ["coverage/time-series"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "coverage/rent-app"
+        "reportsDirectory": "coverage/time-series"
       }
     },
     "lint": {

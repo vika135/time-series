@@ -1,13 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import './app.scss';
+import Chart from "./components/chart/Chart";
+import ValuesList from "./components/values-list/ValuesList";
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="rent-app" />
-      <div />
-    </>
+    <div className='app'>
+      <Chart></Chart>
+      <ValuesList></ValuesList>
+    </div>
   );
 }
 
