@@ -4,11 +4,11 @@ import {ChartValueModel} from "../../models/chart-value.model";
 import Value from "../value/Value";
 import {ValuesContext} from "../../app";
 
-export default function ValuesList() {
-    const [newValue, setNewValue] = useState('')
+export default function ValuesList(): JSX.Element {
+    const [newValue, setNewValue] = useState<string>('')
     const {values, setValues} = useContext(ValuesContext)
 
-    const handleEnterClick = () => {
+    const handleEnterClick = (): void => {
         const value: ChartValueModel = {
             value: +newValue,
             time: Date.now(),
@@ -19,7 +19,7 @@ export default function ValuesList() {
         }
     }
 
-    const handleValueDelete = useCallback((valueTimestamp: number) => {
+    const handleValueDelete = useCallback((valueTimestamp: number): void => {
         setValues(prev => prev.filter((val: ChartValueModel) => val.time !== valueTimestamp))
     }, [])
 
@@ -33,7 +33,7 @@ export default function ValuesList() {
             />
             {values.length ? <p>List of values</p> : ''}
             <ul>
-                {values.map(value => <Value key={value.time} value={value} deleteValue={handleValueDelete}/>)}
+                {values.map((value: ChartValueModel) => <Value key={value.time} value={value} deleteValue={handleValueDelete}/>)}
             </ul>
         </div>
     )

@@ -7,7 +7,6 @@ export default memo(function Value({value, deleteValue}: {
     value: ChartValueModel
     deleteValue: (valueTimestamp: number) => void
 }) {
-    console.log(value)
 
     return (
         <div className='value'>
