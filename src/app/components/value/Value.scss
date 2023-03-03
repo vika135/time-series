@@ -1,0 +1,15 @@
+.value {
+  border: 1px solid black;
+  padding: 5px;
+  display: flex;
+  button {
+    margin-left: auto;
+  }
+  span + span {
+      margin-left: 5px;
+  }
+
+  &-bold {
+    font-weight: bold;
+  }
+}

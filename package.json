@@ -17,6 +17,7 @@
     "@nrwl/vite": "15.6.3",
     "@nrwl/workspace": "15.6.3",
     "@testing-library/react": "13.4.0",
+    "@types/d3": "^7.4.0",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -45,6 +46,7 @@
     "vitest": "^0.25.8"
   },
   "dependencies": {
+    "d3": "^7.8.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }
