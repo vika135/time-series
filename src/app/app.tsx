@@ -1,7 +1,7 @@
 import './app.scss';
 import Chart from "./components/chart/Chart";
 import ValuesList from "./components/values-list/ValuesList";
-import {createContext, Dispatch, SetStateAction, useState} from "react";
+import {createContext, Dispatch, SetStateAction, useEffect, useState} from "react";
 import {ChartValueModel} from "./models/chart-value.model";
 
 type SetValuesType = Dispatch<SetStateAction<ChartValueModel[]>>
@@ -11,6 +11,17 @@ export const ValuesContext = createContext<ValuesContext>({} as unknown as Value
 
 export function App() {
     const [values, setValues] = useState<ChartValueModel[]>([])
+
+    useEffect(() => {
+        const storedValues = localStorage.getItem('values');
+        if (storedValues) {
+            setValues(JSON.parse(storedValues));
+        }
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem('values', JSON.stringify(values));
+    }, [values])
 
     return (
         <ValuesContext.Provider value={{values, setValues}}>
